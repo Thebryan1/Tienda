@@ -144,4 +144,34 @@
 				</ul>
 			</section>
         </div>
+<div class="cart">
+        <h2>Carrito de Compras</h2>
+        <!-- Aquí se mostrarían los productos agregados al carrito -->
+        <ul class="cart-items">
+            <!-- Los productos seleccionados se añadirían aquí -->
+        </ul>
+        <!-- Botón para proceder al pago -->
+        <button class="checkout-btn">Pagar</button>
+    </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Script para manejar la funcionalidad del carrito de compras
+        $(document).ready(function() {
+            // Función para agregar un producto al carrito
+            $(".add-to-cart-btn").click(function() {
+                // Obtener información del producto
+                var productName = $(this).closest("li").find("h3").text();
+                var productPrice = $(this).closest("li").find("p").text();
+                // Crear un nuevo elemento de la lista para el carrito
+                var newItem = "<li>" + productName + " - " + productPrice + "</li>";
+                // Agregar el elemento al carrito
+                $(".cart-items").append(newItem);
+            });
+            // Función para proceder al pago
+            $(".checkout-btn").click(function() {
+                // Aquí podrías redirigir al usuario a una página de pago o realizar otras acciones
+                alert("¡Gracias por tu compra!");
+            });
+        });
+    </script>
     </body>
